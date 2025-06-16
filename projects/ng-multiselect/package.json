@@ -1,9 +1,17 @@
 {
-  "name": "ng-multiselect",
-  "version": "1.0.0",
+  "name": "@ferdifighter/ng-multiselect",
+  "version": "1.0.4",
+  "description": "Eine Angular Multiselect-Komponente mit Gruppierungsfunktion, speziell entwickelt für Feuerwehrfahrzeuge",
+  "keywords": ["angular", "multiselect", "select", "dropdown", "feuerwehr", "typescript"],
+  "author": "M. Wrase",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ferdifighter/ng-multiselect"
+  },
   "peerDependencies": {
-    "@angular/common": "^19.2.0",
-    "@angular/core": "^19.2.0"
+    "@angular/common": "^19.2.14",
+    "@angular/core": "^19.2.14"
   },
   "dependencies": {
     "tslib": "^2.3.0"

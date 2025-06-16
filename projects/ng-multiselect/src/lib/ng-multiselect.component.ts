@@ -61,7 +61,7 @@ export interface MultiSelectOptgroup {
       </div>
       <div class="ms-selection">
         <div class="ms-header">
-          <span>Ausgewählte Elemente</span>
+          <span>{{ selectedTitle }}</span>
         </div>
         <ng-container *ngIf="useOptgroups; else flatSelected">
           <ng-container *ngFor="let group of selectedGrouped">
@@ -96,7 +96,19 @@ export class NgMultiselectComponent implements OnInit, OnChanges {
   @Input() optgroups: MultiSelectOptgroup[] = [];
   @Input() useOptgroups = false;
   @Input() placeholder = 'Suchen...';
+  @Input() selectedTitle = 'Ausgewählte Elemente';
   @Input() displayWith?: (option: MultiSelectOption) => string;
+  
+  private _selected: MultiSelectOption[] = [];
+  @Input() set selected(value: MultiSelectOption[]) {
+    this._selected = value || [];
+    this.selectedOptions = [...this._selected];
+    this.filterOptions();
+  }
+  get selected(): MultiSelectOption[] {
+    return this._selected;
+  }
+
   @Output() selectionChange = new EventEmitter<MultiSelectOption[]>();
 
   searchText = '';
@@ -109,7 +121,9 @@ export class NgMultiselectComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.filterOptions();
+    if (changes['options'] || changes['optgroups']) {
+      this.filterOptions();
+    }
   }
 
   filterOptions() {
@@ -144,6 +158,7 @@ export class NgMultiselectComponent implements OnInit, OnChanges {
     } else {
       this.selectedOptions.splice(index, 1);
     }
+    this._selected = [...this.selectedOptions];
     this.selectionChange.emit(this.selectedOptions);
     this.filterOptions();
   }
@@ -165,6 +180,7 @@ export class NgMultiselectComponent implements OnInit, OnChanges {
         }
       });
     }
+    this._selected = [...this.selectedOptions];
     this.selectionChange.emit(this.selectedOptions);
     this.filterOptions();
   }
@@ -173,6 +189,7 @@ export class NgMultiselectComponent implements OnInit, OnChanges {
     const index = this.selectedOptions.findIndex(selected => selected.value === option.value);
     if (index !== -1) {
       this.selectedOptions.splice(index, 1);
+      this._selected = [...this.selectedOptions];
       this.selectionChange.emit(this.selectedOptions);
       this.filterOptions();
     }

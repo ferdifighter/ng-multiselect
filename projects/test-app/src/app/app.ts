@@ -41,6 +41,12 @@ export class App {
     }
   ];
 
+  // Vorauswahl
+  vorauswahl: MultiSelectOption[] = [
+    { value: 'apfel', label: 'Apfel', groupLabel: 'Obst' },
+    { value: 'karotte', label: 'Karotte', groupLabel: 'Gemüse' }
+  ];
+
   // Beispiel für eigene Anzeige-Funktion (optional)
   fahrzeugAnzeige = (option: MultiSelectOption) => option.label;
 
