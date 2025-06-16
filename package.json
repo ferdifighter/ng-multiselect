@@ -1,0 +1,41 @@
+{
+  "name": "ng-multiselect",
+  "version": "0.0.1",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "peerDependencies": {
+    "@angular/common": "^20.0.0",
+    "@angular/core": "^20.0.0",
+    "@angular/forms": "^20.0.0",
+    "@angular/platform-browser": "^20.0.0",
+    "rxjs": "~7.8.0"
+  },
+  "dependencies": {
+    "@angular/compiler": "^20.0.0",
+    "@angular/router": "^20.0.0",
+    "ng-multiselect": "file:dist/ng-multiselect",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^20.0.0",
+    "@angular/build": "^20.0.2",
+    "@angular/cli": "^20.0.0",
+    "@angular/compiler-cli": "^20.0.0",
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
+    "@nestjs/platform-express": "^10.0.0",
+    "@types/node": "^18.0.0",
+    "mysql2": "^3.0.0",
+    "ng-packagr": "^20.0.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.0",
+    "typescript": "~5.8.2"
+  }
+}

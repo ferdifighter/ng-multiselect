@@ -1,0 +1,95 @@
+.ms-container {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.ms-selectable,
+.ms-selection {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.ms-header {
+  padding: 0.5rem;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ccc;
+}
+
+.ms-search {
+  width: 100%;
+  padding: 0.25rem;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.ms-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.ms-list li {
+  padding: 0.2rem;
+  cursor: pointer;
+
+  &:hover {
+    background: #f0f0f0;
+  }
+}
+
+.ms-selected {
+  background: #e3f2fd;
+}
+
+.ms-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+// Optgroup Styles
+.ms-optgroup {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.ms-optgroup-label {
+  padding: 0.5rem;
+  background: #f8f9fa;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+
+  &:hover {
+    background: #e9ecef;
+  }
+
+  &.ms-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.ms-optgroup-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding-left: 1.5rem;
+  }
+}
+
+.ms-selection .ms-list {
+  & li {
+    padding-left: 1.5rem;
+  }
+}
+
+.ms-selection .ms-optgroup-label {
+  padding-left: 0;
+} 
